@@ -256,10 +256,10 @@ int read_sort_file(char *filename, int source, char *source_path[])
 		 * Scan for filename, don't use sscanf() and "%s" because
 		 * that can't handle filenames with spaces
 		 */
-		for(name = sort_filename; !isspace(*line) && *line != '\0';) {
+		for(name = sort_filename; *line != '\0';) {
 			if(*line == '\\') {
 				line ++;
-				if (*line == '\0')
+				if (*line == '0')
 					break;
 			}
 			*name ++ = *line ++;
