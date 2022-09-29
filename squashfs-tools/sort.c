@@ -260,7 +260,10 @@ int read_sort_file(char *filename, int source, char *source_path[])
 			if(*line == '\\') {
 				line ++;
 				if (*line == '0')
+				{
+					line ++;
 					break;
+				}
 			}
 			*name ++ = *line ++;
 		}
